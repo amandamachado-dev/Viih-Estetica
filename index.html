@@ -36,9 +36,10 @@
             background-color: #fff;
             color: var(--dark-text);
             line-height: 1.6;
-            overflow-x: hidden;width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         /* Header */
@@ -88,15 +89,15 @@
         /* Hero Section */
         .hero {
             padding: 12rem 5% 6rem;
-    text-align: center;
-    background: linear-gradient(135deg, var(--primary-pink) 0%, #ffffff 100%);
-    min-height: 10vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-pink) 0%, #ffffff 100%);
+            min-height: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero h1 {
@@ -109,27 +110,43 @@
         }
 
         .btn {
-            background-color: #fff;
-            color: var(--dark-text);
-            padding: 1rem 2.5rem;
-            border-radius: 100px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 500;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 6px var(--button-shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        background-color: white;
+        color: var(--dark-text);
+        padding: 1rem 2.5rem;
+        border-radius: 100px;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 0.95rem;
+        box-shadow: 0 4px 6px var(--button-shadow);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px var(--button-shadow);
-            
-        }
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        background-color: #d173a7;
+    }
 
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: all 0.5s ease;
+    }
+
+    .btn:hover::before {
+        left: 100%;
+    }
         /* Seção de Serviços */
         .services-container {
-            
+
             padding: 0.2rem 5%;
             max-width: 1800px;
             margin: 0 auto;
@@ -197,7 +214,7 @@
         @media (max-width: 768px) {
             .services-grid {
                 gap: 0.5rem;
-                padding:0 0.5rem 3.5rem;
+                padding: 0 0.5rem 3.5rem;
             }
 
             .service-card {
@@ -773,20 +790,19 @@
         }
 
         .error-message {
-    color: red;
-    font-size: 0.8rem;
-    margin-top: 5px;
-}
+            color: red;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
 
-.form-group {
-    position: relative;
-}
+        .form-group {
+            position: relative;
+        }
 
-.form-group input:invalid {
-    border-color: rgb(187, 172, 172);
-}
-
-
+        .form-group input:invalid {
+            border-color: rgb(187, 172, 172);
+        }
+        
     </style>
 </head>
 
@@ -989,59 +1005,28 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form 
-                    id="mc-embedded-subscribe-form" 
-                    action="https://gmail.us3.list-manage.com/subscribe/post" 
-                    method="post" 
-                    name="mc-embedded-subscribe-form" 
-                    class="validate" 
-                    target="_blank"
-                >
+                <form id="mc-embedded-subscribe-form" action="https://gmail.us3.list-manage.com/subscribe/post"
+                    method="post" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                     <input type="hidden" name="u" value="9551c44a43afc4575ec29ff85">
                     <input type="hidden" name="id" value="2c7a66953a">
-                    
+
                     <div class="form-group">
-                        <input 
-                            type="text" 
-                            name="FNAME" 
-                            id="mce-FNAME" 
-                            placeholder="Nome completo" 
-                            required 
-                            minlength="2" 
-                            maxlength="50"
-                        >
+                        <input type="text" name="FNAME" id="mce-FNAME" placeholder="Nome completo" required
+                            minlength="2" maxlength="50">
                     </div>
                     <div class="form-group">
-                        <input 
-                            type="email" 
-                            name="EMAIL" 
-                            id="mce-EMAIL" 
-                            placeholder="E-mail" 
-                            required 
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                        >
+                        <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="E-mail" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                     </div>
                     <div class="form-group">
-                        <input 
-                            type="tel" 
-                            name="PHONE" 
-                            id="mce-PHONE" 
-                            placeholder="Telefone" 
-                            required 
-                            pattern="[0-9]{10,11}"
-                            title="Insira um telefone válido (10-11 dígitos)"
-                        >
+                        <input type="tel" name="PHONE" id="mce-PHONE" placeholder="Telefone" required
+                            pattern="[0-9]{10,11}" title="Insira um telefone válido (10-11 dígitos)">
                     </div>
-                    
-                    <button 
-                        type="submit" 
-                        name="subscribe" 
-                        id="mc-embedded-subscribe" 
-                        class="btn"
-                    >
+
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn">
                         Enviar mensagem
                     </button>
-            
+
                     <!-- Campos ocultos do Mailchimp -->
                     <div style="position: absolute; left: -5000px;" aria-hidden="true">
                         <input type="text" name="b_9551c44a43afc4575ec29ff85_2c7a66953a" tabindex="-1" value="">
@@ -1181,7 +1166,7 @@
                     { selector: '.hero', animation: 'scroll-animation' },
                     { selector: '.services-container', animation: 'scroll-animation' },
                     { selector: '.profile-content', animation: 'scroll-animation slide-left' },
-                    { selector: '.evaluation-section' , animation: 'scroll-animation slide-right' },
+                    { selector: '.evaluation-section', animation: 'scroll-animation slide-right' },
                     { selector: '.services-detailed', animation: 'scroll-animation fade-in' },
                     { selector: '.contact-section', animation: 'scroll-animation' }
                 ];
@@ -1224,79 +1209,79 @@
             window.addEventListener('resize', addScrollAnimations);
         });
 
-        
+
         // *********************//
 
-        document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('mc-embedded-subscribe-form');
-    
-    form.addEventListener('submit', function(event) {
-        // Validação personalizada
-        const nome = document.getElementById('mce-FNAME');
-        const email = document.getElementById('mce-EMAIL');
-        const telefone = document.getElementById('mce-PHONE');
-        
-        // Limpa mensagens de erro anteriores
-        document.querySelectorAll('.error-message').forEach(el => el.remove());
-        
-        let isValid = true;
-        
-        // Validação do nome
-        if (nome.value.trim().length < 2) {
-            const errorMsg = document.createElement('div');
-            errorMsg.className = 'error-message';
-            errorMsg.style.color = 'red';
-            errorMsg.textContent = 'Nome deve ter pelo menos 2 caracteres';
-            nome.parentNode.insertBefore(errorMsg, nome.nextSibling);
-            isValid = false;
-        }
-        
-        // Validação do email
-        const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
-        if (!emailRegex.test(email.value)) {
-            const errorMsg = document.createElement('div');
-            errorMsg.className = 'error-message';
-            errorMsg.style.color = 'red';
-            errorMsg.textContent = 'Insira um email válido';
-            email.parentNode.insertBefore(errorMsg, email.nextSibling);
-            isValid = false;
-        }
-        
-        // Validação do telefone
-        const telefoneRegex = /^[0-9]{10,11}$/;
-        if (!telefoneRegex.test(telefone.value)) {
-            const errorMsg = document.createElement('div');
-            errorMsg.className = 'error-message';
-            errorMsg.style.color = 'red';
-            errorMsg.textContent = 'Insira um telefone válido (10-11 dígitos)';
-            telefone.parentNode.insertBefore(errorMsg, telefone.nextSibling);
-            isValid = false;
-        }
-        
-        // Se a validação falhar, impede o envio
-        if (!isValid) {
-            event.preventDefault();
-            return;
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('mc-embedded-subscribe-form');
 
-        // Redireciona após o envio
-        event.preventDefault();
-        
-        // Simula o envio do formulário
-        fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            mode: 'no-cors'
-        }).then(() => {
-            // Redireciona para página de confirmação
-            window.location.href = 'confirmacao.html';
-        }).catch(error => {
-            console.error('Erro:', error);
-            // Redireciona mesmo em caso de erro
-            window.location.href = 'confirmacao.html';
+            form.addEventListener('submit', function (event) {
+                // Validação personalizada
+                const nome = document.getElementById('mce-FNAME');
+                const email = document.getElementById('mce-EMAIL');
+                const telefone = document.getElementById('mce-PHONE');
+
+                // Limpa mensagens de erro anteriores
+                document.querySelectorAll('.error-message').forEach(el => el.remove());
+
+                let isValid = true;
+
+                // Validação do nome
+                if (nome.value.trim().length < 2) {
+                    const errorMsg = document.createElement('div');
+                    errorMsg.className = 'error-message';
+                    errorMsg.style.color = 'red';
+                    errorMsg.textContent = 'Nome deve ter pelo menos 2 caracteres';
+                    nome.parentNode.insertBefore(errorMsg, nome.nextSibling);
+                    isValid = false;
+                }
+
+                // Validação do email
+                const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+                if (!emailRegex.test(email.value)) {
+                    const errorMsg = document.createElement('div');
+                    errorMsg.className = 'error-message';
+                    errorMsg.style.color = 'red';
+                    errorMsg.textContent = 'Insira um email válido';
+                    email.parentNode.insertBefore(errorMsg, email.nextSibling);
+                    isValid = false;
+                }
+
+                // Validação do telefone
+                const telefoneRegex = /^[0-9]{10,11}$/;
+                if (!telefoneRegex.test(telefone.value)) {
+                    const errorMsg = document.createElement('div');
+                    errorMsg.className = 'error-message';
+                    errorMsg.style.color = 'red';
+                    errorMsg.textContent = 'Insira um telefone válido (10-11 dígitos)';
+                    telefone.parentNode.insertBefore(errorMsg, telefone.nextSibling);
+                    isValid = false;
+                }
+
+                // Se a validação falhar, impede o envio
+                if (!isValid) {
+                    event.preventDefault();
+                    return;
+                }
+
+                // Redireciona após o envio
+                event.preventDefault();
+
+                // Simula o envio do formulário
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    mode: 'no-cors'
+                }).then(() => {
+                    // Redireciona para página de confirmação
+                    window.location.href = 'confirmacao.html';
+                }).catch(error => {
+                    console.error('Erro:', error);
+                    // Redireciona mesmo em caso de erro
+                    window.location.href = 'confirmacao.html';
+                });
+            });
         });
-    });
-});
 
 
     </script>
