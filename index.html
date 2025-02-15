@@ -105,7 +105,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 12rem 5% 6rem;
+            padding: 18rem 5% 6rem;
             text-align: center;
             background: linear-gradient(135deg, var(--primary-pink) 0%, #ffffff 100%);
             min-height: 10vh;
@@ -189,7 +189,7 @@
 
         .service-card img {
             width: 100%;
-            height: 200px;
+            height: 400px;
             object-fit: cover;
             border-radius: 12px;
             transition: transform 0.3s ease-in-out;
@@ -219,7 +219,7 @@
             }
 
             .service-card img {
-                height: 200px;
+                height: 250px;
                 width: 100%;
                 object-fit: cover;
             }
@@ -276,7 +276,7 @@
             flex-direction: column;
             justify-content: center;
             text-align: justify;
-            padding: 0 13%;
+            padding: 4rem 13%;
             max-width: 1100px;
         }
 
@@ -339,27 +339,47 @@
         }
 
         @media (max-width: 1024px) {
-            .profile-container {
-                flex-direction: column;
-                height: auto;
-                padding: 2rem;
-                width: 100%;
-            }
+            @media (max-width: 1024px) {
+                .profile-container {
+                    flex-direction: column;
+                    height: auto;
+                    padding: 0;
+                    /* Remove o padding */
+                    width: 100%;
+                }
 
-            .profile-content {
-                padding: 5% 5%;
-                max-width: 100%;
-                text-align: center;
-                align-items: center;
+                .profile-content {
+                    padding: 15% 5% 0 5%;
+                    /* Remove padding bottom */
+                    max-width: 100%;
+                    text-align: center;
+                    align-items: center;
+                }
+
+                .profile-image-container {
+                    padding: 0;
+                    /* Remove o padding */
+                    margin-top: -20px;
+                    /* Aproxima a imagem do texto */
+                }
+
+                .profile-image {
+                    max-width: 100%;
+                    /* Aumenta a largura */
+                    max-height: none;
+                    /* Remove limitação de altura */
+                    width: 100%;
+                    /* Garante largura total */
+                    margin-bottom: -5px;
+                    /* Remove espaço inferior */
+                }
             }
 
             .profile-badges {
                 justify-content: center;
             }
 
-            .profile-image-container {
-                padding: 5%;
-            }
+
         }
 
         /* Seção Avaliação */
@@ -655,6 +675,20 @@
             font-size: 0.9rem;
         }
 
+        .developer-credits {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        .developer-credits a {
+            color: var(--light-text);
+            text-decoration: none;
+        }
+
+        .developer-credits a:hover {
+            text-decoration: underline;
+        }
+
 
         /* Estilos base para animações de scroll */
         .scroll-animation {
@@ -847,7 +881,7 @@
                 <span></span>
             </button>
             <div class="nav-links">
-                
+
                 <a href="#EZBody">EZ Body</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#contato">Contato</a>
@@ -857,8 +891,8 @@
 
     <section class="hero">
         <h1>Descubra sua melhor versão agora!</h1>
-        <a href="https://wa.me/5511951513347?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta" 
-        target="_blank" class="btn">Agende sua consulta</a>
+        <a href="https://wa.me/5511951513347?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta" target="_blank"
+            class="btn">Agende sua consulta</a>
     </section>
 
     <section class="services-container">
@@ -877,7 +911,7 @@
                             <img src="./assets/manicure.jpg" alt="Avaliação digital">
                         </div>
                         <div class="service-card">
-                            <img src="./assets/massagem.jpg" alt="Tratamento capilar">
+                            <img src="./assets/01-sobrancelha.jpg" alt="sobrancelha">
                         </div>
                     </div>
                 </div>
@@ -886,16 +920,16 @@
                 <div class="carousel-item">
                     <div class="services-grid">
                         <div class="service-card">
-                            <img src="./assets/massagem.jpg" alt="Consulta médica">
+                            <img src="./assets/01-massagem.jpg" alt="Consulta médica">
                         </div>
                         <div class="service-card">
-                            <img src="./assets/limpeza rosto.jpg" alt="Tratamento facial">
+                            <img src="./assets/01 limpeza-rosto.jpg" alt="Tratamento facial">
                         </div>
                         <div class="service-card">
-                            <img src="./assets/depilacao-lasr.jpg" alt="Avaliação digital">
+                            <img src="./assets/01 depilacao-laser.png" alt="Avaliação digital">
                         </div>
                         <div class="service-card">
-                            <img src="./assets/manicure.jpg" alt="Tratamento capilar">
+                            <img src="./assets/01-manicure.jpg" alt="Tratamento capilar">
                         </div>
                     </div>
                 </div>
@@ -956,8 +990,8 @@
                     poucas semanas. Ideal para todas as idades, ajuda na circulação e na oxigenação dos tecidos. As
                     sessões são rápidas e eficazes, proporcionando um corpo mais firme de forma segura. Descubra o
                     futuro da modelação corporal com o EZ Body!</p>
-                <a href="https://wa.me/5511951513347?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20EZ%20Body" 
-                target="_blank"  class="btn">Agende agora</a>
+                <a href="https://wa.me/5511951513347?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20EZ%20Body"
+                    target="_blank" class="btn">Agende agora</a>
             </div>
         </div>
     </section>
@@ -969,7 +1003,7 @@
                 <div class="service-item">
                     <h3>Massagem</h3>
                     <div class="service-image">
-                        <img src="./assets/massagem.jpg" alt="Massagem">
+                        <img src="./assets/01-massagem.jpg" alt="Massagem">
                     </div>
                     <p>Relaxamento muscular profundo e redução do estresse com técnicas personalizadas para cada
                         paciente.</p>
@@ -977,21 +1011,21 @@
                 <div class="service-item">
                     <h3>Depilação a Laser</h3>
                     <div class="service-image">
-                        <img src="./assets/depilacao-lasr.jpg" alt="Depilação a Laser">
+                        <img src="./assets/01 depilacao-laser.png" alt="Depilação a Laser">
                     </div>
                     <p>Tecnologia avançada para remoção definitiva dos pelos, com conforto e segurança.</p>
                 </div>
                 <div class="service-item">
                     <h3>Manicure e Pedicure</h3>
                     <div class="service-image">
-                        <img src="./assets/manicure.jpg" alt="Manicure e Pedicure">
+                        <img src="./assets/01-manicure.jpg" alt="Manicure e Pedicure">
                     </div>
                     <p>Cuidados completos para mãos e pés, com produtos de primeira linha e esterilização garantida.</p>
                 </div>
                 <div class="service-item">
                     <h3>Limpeza Facial</h3>
                     <div class="service-image">
-                        <img src="./assets/limpeza rosto.jpg" alt="Limpeza Facial">
+                        <img src="./assets/01 limpeza-rosto.jpg" alt="Limpeza Facial">
                     </div>
                     <p>Tratamento profundo da pele com produtos específicos para cada tipo de pele e necessidade.</p>
                 </div>
@@ -1000,12 +1034,13 @@
                     <div class="service-image">
                         <img src="./assets/bumbum.jpeg" alt="Peeling">
                     </div>
-                    <p>Tratamento contra celulite através de ondas elétricas.Definição dos musculos.</p>
+                    <p>Tratamento contra celulite com impulsos elétricos que promovem a circulação sanguínea, oxigenação
+                        dos tecidos e quebra de gordura localizada, reduzindo o aspecto da celulite. </p>
                 </div>
                 <div class="service-item">
                     <h3>Microagulhamento</h3>
                     <div class="service-image">
-                        <img src="./assets/massagem.jpg" alt="Microagulhamento">
+                        <img src="./assets/01-sobrancelha.jpg" alt="Microagulhamento">
                     </div>
                     <p>Estímulo à produção de colágeno e tratamento de cicatrizes e rejuvenescimento.</p>
                 </div>
@@ -1020,7 +1055,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <h4>Endereço</h4>
-                        <p>Estrada do M'Boi Mirim, 1537 <br>Sala 4 - Piraporinha<br> 
+                        <p>Estrada do M'Boi Mirim, 1537 <br>Sala 4 - Piraporinha<br>
                             Jardim das Flores 04905-021 <br>Próx ao Banco do Brasil <br>São Paulo, SP</p>
                     </div>
                     <div class="contact-item">
@@ -1089,13 +1124,14 @@
                         <a href="https://www.instagram.com/viih_esteticaa" target="_blank">Instagram</a>
                         <a href="#">Facebook</a>
 
-                        <a href="https://wa.me/5511951513347" 
-                        target="_blank">WhatsApp</a>
+                        <a href="https://wa.me/5511951513347" target="_blank">WhatsApp</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Dra. Vivian Arditi. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Viih Estética. Todos os direitos reservados.</p>
+                <p class="developer-credits">Desenvolvido por Amanda Machado | <a
+                        href="mailto:amanda95151@gmail.com">amanda95151@gmail.com</a></p>
             </div>
         </div>
     </footer>
